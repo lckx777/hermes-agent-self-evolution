@@ -18,7 +18,7 @@ from rich.console import Console
 from rich.panel import Panel
 from rich.table import Table
 
-from evolution.core.config import ForgeConfig, get_hermes_agent_path
+from evolution.core.config import EvolutionConfig, get_hermes_agent_path
 from evolution.core.dataset_builder import SyntheticDatasetBuilder, EvalDataset, GoldenDatasetLoader
 from evolution.core.fitness import skill_fitness_metric, LLMJudge, FitnessScore
 from evolution.core.constraints import ConstraintValidator
@@ -45,7 +45,7 @@ def evolve(
 ):
     """Main evolution function — orchestrates the full optimization loop."""
 
-    config = ForgeConfig(
+    config = EvolutionConfig(
         iterations=iterations,
         optimizer_model=optimizer_model,
         eval_model=eval_model,
@@ -56,7 +56,7 @@ def evolve(
         config.hermes_agent_path = Path(hermes_repo)
 
     # ── 1. Find and load the skill ──────────────────────────────────────
-    console.print(f"\n[bold cyan]🧬 Hermes Agent Evolution[/bold cyan] — Evolving skill: [bold]{skill_name}[/bold]\n")
+    console.print(f"\n[bold cyan]🧬 Hermes Agent Self-Evolution[/bold cyan] — Evolving skill: [bold]{skill_name}[/bold]\n")
 
     skill_path = find_skill(skill_name, config.hermes_agent_path)
     if not skill_path:

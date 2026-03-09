@@ -1,8 +1,8 @@
-# Hermes Agent Evolution — Evolutionary Self-Improvement for Hermes Agent
+# Hermes Agent Self-Evolution — Evolutionary Self-Improvement for Hermes Agent
 
 ## Vision
 
-A standalone optimization pipeline that systematically improves Hermes Agent's performance by evolving skills, prompts, tool descriptions, and agent configurations using automated optimization loops. Lives in its own repo (`NousResearch/hermes-agent-evolution`), operates ON hermes-agent — not part of it.
+A standalone optimization pipeline that systematically improves Hermes Agent's performance by evolving skills, prompts, tool descriptions, and agent configurations using automated optimization loops. Lives in its own repo (`NousResearch/hermes-agent-self-evolution`), operates ON hermes-agent — not part of it.
 
 Three complementary engines, unified under one workflow:
 
@@ -133,10 +133,10 @@ Human Review & Merge
 
 ### Where It Lives
 
-Hermes Agent Evolution lives in its own repo (`NousResearch/hermes-agent-evolution`), separate from hermes-agent. It pip-installs or clones hermes-agent to access its infrastructure, and outputs PRs against the hermes-agent repo.
+Hermes Agent Self-Evolution lives in its own repo (`NousResearch/hermes-agent-self-evolution`), separate from hermes-agent. It pip-installs or clones hermes-agent to access its infrastructure, and outputs PRs against the hermes-agent repo.
 
 ```
-hermes-agent-evolution/                  # Standalone repo
+hermes-agent-self-evolution/             # Standalone repo
 ├── PLAN.md                             # This file
 ├── README.md                           # Setup, usage, examples
 ├── pyproject.toml                      # Package config + dependencies (dspy, gepa)
@@ -171,8 +171,8 @@ hermes-agent-evolution/                  # Standalone repo
 
 ```bash
 # Clone and install
-git clone https://github.com/NousResearch/hermes-agent-evolution.git
-cd hermes-agent-evolution
+git clone https://github.com/NousResearch/hermes-agent-self-evolution.git
+cd hermes-agent-self-evolution
 pip install -e ".[dev]"
 
 # Point at hermes-agent repo (auto-detected from ~/.hermes/hermes-agent or env var)
@@ -205,9 +205,9 @@ python -m evolution.code.evolve_tool_code \
 
 ### Relationship to hermes-agent
 
-**hermes-agent-evolution operates ON hermes-agent, not inside it.** Zero changes to the agent repo are needed. It reads from the hermes-agent codebase and writes evolved versions to git branches, creating PRs for human review.
+**hermes-agent-self-evolution operates ON hermes-agent, not inside it.** Zero changes to the agent repo are needed. It reads from the hermes-agent codebase and writes evolved versions to git branches, creating PRs for human review.
 
-| hermes-agent Component | How Forge Uses It |
+| hermes-agent Component | How Self-Evolution Uses It |
 |------------------------|-------------------|
 | `batch_runner.py` | Run agent on eval tasks in parallel |
 | `environments/benchmarks/tblite/` | Benchmark gating |

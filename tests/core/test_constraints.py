@@ -2,12 +2,12 @@
 
 import pytest
 from evolution.core.constraints import ConstraintValidator
-from evolution.core.config import ForgeConfig
+from evolution.core.config import EvolutionConfig
 
 
 @pytest.fixture
 def validator():
-    config = ForgeConfig()
+    config = EvolutionConfig()
     return ConstraintValidator(config)
 
 

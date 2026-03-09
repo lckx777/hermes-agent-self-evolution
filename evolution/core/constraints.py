@@ -9,7 +9,7 @@ from pathlib import Path
 from dataclasses import dataclass
 from typing import Optional
 
-from evolution.core.config import ForgeConfig
+from evolution.core.config import EvolutionConfig
 
 
 @dataclass
@@ -24,7 +24,7 @@ class ConstraintResult:
 class ConstraintValidator:
     """Validates evolved artifacts against hard constraints."""
 
-    def __init__(self, config: ForgeConfig):
+    def __init__(self, config: EvolutionConfig):
         self.config = config
 
     def validate_all(

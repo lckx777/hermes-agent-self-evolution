@@ -8,7 +8,7 @@ import dspy
 from dataclasses import dataclass
 from typing import Optional
 
-from evolution.core.config import ForgeConfig
+from evolution.core.config import EvolutionConfig
 
 
 @dataclass
@@ -57,7 +57,7 @@ class LLMJudge:
         conciseness: float = dspy.OutputField(desc="Score 0.0-1.0: Appropriately concise?")
         feedback: str = dspy.OutputField(desc="Specific, actionable feedback on what could be improved")
 
-    def __init__(self, config: ForgeConfig):
+    def __init__(self, config: EvolutionConfig):
         self.config = config
         self.judge = dspy.ChainOfThought(self.JudgeSignature)
 

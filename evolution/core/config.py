@@ -7,8 +7,8 @@ from typing import Optional
 
 
 @dataclass
-class ForgeConfig:
-    """Configuration for an evolution optimization run."""
+class EvolutionConfig:
+    """Configuration for a self-evolution optimization run."""
 
     # hermes-agent repo path
     hermes_agent_path: Path = field(default_factory=lambda: get_hermes_agent_path())

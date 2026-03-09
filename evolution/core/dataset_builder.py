@@ -1,4 +1,4 @@
-"""Evaluation dataset generation for hermes-agent-evolution.
+"""Evaluation dataset generation for hermes-agent-self-evolution.
 
 Sources:
 A) Synthetic generation — LLM reads a skill/tool/prompt and generates test cases
@@ -14,7 +14,7 @@ from typing import Optional
 
 import dspy
 
-from evolution.core.config import ForgeConfig
+from evolution.core.config import EvolutionConfig
 
 
 @dataclass
@@ -108,7 +108,7 @@ class SyntheticDatasetBuilder:
         num_cases: int = dspy.InputField(desc="Number of test cases to generate")
         test_cases: str = dspy.OutputField(desc="JSON array of test cases, each with: task_input, expected_behavior, difficulty, category")
 
-    def __init__(self, config: ForgeConfig):
+    def __init__(self, config: EvolutionConfig):
         self.config = config
         self.generator = dspy.ChainOfThought(self.GenerateTestCases)
 

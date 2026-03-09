@@ -1,8 +1,8 @@
-# 🧬 Hermes Agent Evolution
+# 🧬 Hermes Agent Self-Evolution
 
 **Evolutionary self-improvement for [Hermes Agent](https://github.com/NousResearch/hermes-agent).**
 
-Hermes Forge uses DSPy + GEPA (Genetic-Pareto Prompt Evolution) to automatically evolve and optimize Hermes Agent's skills, tool descriptions, system prompts, and code — producing measurably better versions through reflective evolutionary search.
+Hermes Agent Self-Evolution uses DSPy + GEPA (Genetic-Pareto Prompt Evolution) to automatically evolve and optimize Hermes Agent's skills, tool descriptions, system prompts, and code — producing measurably better versions through reflective evolutionary search.
 
 **No GPU training required.** Everything operates via API calls — mutating text, evaluating results, and selecting the best variants. ~$2-10 per optimization run.
 
@@ -29,8 +29,8 @@ GEPA reads execution traces to understand *why* things fail (not just that they 
 
 ```bash
 # Install
-git clone https://github.com/NousResearch/hermes-agent-evolution.git
-cd hermes-agent-evolution
+git clone https://github.com/NousResearch/hermes-agent-self-evolution.git
+cd hermes-agent-self-evolution
 pip install -e ".[dev]"
 
 # Point at your hermes-agent repo
