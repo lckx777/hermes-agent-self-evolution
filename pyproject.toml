@@ -28,7 +28,7 @@ dev = [
     "pytest-asyncio>=0.21",
 ]
 darwinian = [
-    "darwinian-evolver",
+    "darwinian-evolver @ git+https://github.com/imbue-ai/darwinian_evolver.git ; python_version >= '3.11'",
 ]
 
 [project.urls]
